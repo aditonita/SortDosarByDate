@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,9 @@ namespace SortDosarByDate
 
         public DateOnly MaxDateSession()
         {
-            _sedinte.Sort((x.StandardDate, y.StandardDate) => y.OrderDate.CompareTo(x.OrderDate));
+            _sedinte.Sort((x, y) => y._standardDate.CompareTo(x._standardDate));
+            return _sedinte[0]._standardDate;
         }
+        
     }
 }

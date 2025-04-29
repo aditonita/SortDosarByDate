@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace SortDosarByDate
 {
+    [Serializable()]
     internal class Sedinta
     {
-        private DateOnly _standardDate;
-        private TimeOnly _oraEstimata;
-        private String _complet;
-        private String _tipSolutie;
-        private String _solutiePeScurt;
-        private String _document;
-        public DateOnly StandardDate
-        {
-            get
-            {
-                return _standardDate;
-            }
-        }
+        public DateOnly _standardDate;
+        public TimeOnly _oraEstimata;
+        public String _complet;
+        public String _tipSolutie;
+        public String _solutiePeScurt;
+        public String _document;
         public Sedinta(String standardDate, String oraEstimata, String complet, String tipSolutie, String solutiePeScurt, String document)
         {
             _standardDate = new DateOnly(Int32.Parse(standardDate.Substring(0, 4)), Int32.Parse(standardDate.Substring(5, 2)), Int32.Parse(standardDate.Substring(8, 2)));
