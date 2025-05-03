@@ -9,6 +9,12 @@ namespace SortDosarByDate
 {
     internal class Parti
     {
-        List<Parte> _parti;
+        private List<Parte> _parti;
+        public List<Parte> ParteList { get { return _parti; } }
+        public Parti() { _parti = new List<Parte>(); }
+        public void AddParte(Parte parte) 
+        {
+          _parti.Add(parte);
+        }
     }
 }

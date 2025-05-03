@@ -8,7 +8,15 @@ namespace SortDosarByDate
 {
     internal class Parte
     {
-        String _nume;
-        String _calitateParte;
+        private String _nume;
+        private String _calitateParte;
+        public String GetNume { get { return _nume; } }
+        public String GetCalitateParte { get {  return _calitateParte; } } 
+        public Parte(String nume, String calitateParte)
+        {
+            _nume = nume;
+            _calitateParte = calitateParte;
+        }
+
     }
 }

@@ -8,6 +8,11 @@ namespace SortDosarByDate
 {
     internal class CaiAtac
     {
-        List<CaleAtac> _caiatac;
+        private List<CaleAtac> _caiatac;
+        public CaiAtac()
+        {
+            _caiatac = new List<CaleAtac>();
+        }
+        public void AddCaleAtac(CaleAtac caleAtac) { _caiatac.Add(caleAtac); }
     }
 }
