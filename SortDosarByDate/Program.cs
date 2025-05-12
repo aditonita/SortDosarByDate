@@ -13,7 +13,7 @@ sessions.AddDosar(new("27575/299/2022", "Tribunal", "https://portal.just.ro/93/S
 
 Sedinte CourtSessions1 = new();
 CourtSessions1.AddSedinta(new("2021.08.12", "10:30", "", "", "", ""));
-CourtSessions1.AddSedinta(new("2025.08.12", "10:30", "", "", "", ""));
+CourtSessions1.AddSedinta(new("2025.05.04", "10:30", "", "", "", ""));
 sessions.AddDosar(new("27575/299/2021", "judecatorie", "https://portal.just.ro/93/SitePages/Dosar.aspx?id_dosar=9400000000306300&id_inst=290", "14.10.2024", "14.10.2024", "Sectia a-VI-a Civila", "Litigii cu profesionistii", "pretentii", "Apel", LegalRecourses, LegalParties, CourtSessions1));
 
 
@@ -22,4 +22,4 @@ Console.WriteLine(sessions.DosarList[0].GetSedinte.MaxDateSession());
 //Console.WriteLine(sessions.DosarList[0].GetSedinte.SedintaList[1].GetSolutiePeScurt);
 Console.WriteLine(sessions.GetOrderDosarList()[0].GetSedinte.MaxDateSession());
 
-
+Console.WriteLine(sessions.GetWorkforToday().Count);

@@ -22,9 +22,23 @@ namespace SortDosarByDate
             _dosare.Add(dosar);
         }
 
-        public List<Dosar> GetOrderDosarList() {
+        public List<Dosar> GetOrderDosarList()
+        {
             _dosare.Sort((x, y) => y.GetSedinte.MaxDateSession().CompareTo(x.GetSedinte.MaxDateSession()));
             return _dosare;
+        }
+
+        public List<Dosar> GetWorkforToday()
+        {
+            return _dosare.FindAll
+                (
+                delegate (Dosar dosar)
+                {
+                    DateTime today = DateTime.Now;
+                    return dosar.GetSedinte.MaxDateSession() >= new DateOnly(today.Year, today.Month, today.Day - 7);
+                }
+                );
+
         }
     }
 }
